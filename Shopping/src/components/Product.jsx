@@ -8,7 +8,8 @@ const Product = ({ product }) => {
   function setlocalStorage() {
     const myObjectString = JSON.stringify(product);
 
-    localStorage.setItem(myObjectString);
+    localStorage.setItem("bookMarked", myObjectString);
+    console.log("hello");
   }
   return (
     <section className="  border rounded-[20px] p-4">
@@ -25,7 +26,7 @@ const Product = ({ product }) => {
             <h4>Ratings : {product.rating}</h4>
             <span className="fa fa-star checked"></span>
           </div>
-          <h4>({product.reviews.length})</h4>
+          <h4>({product.reviews?.length})</h4>
         </div>
         <div className="flex items-center justify-around">
           <h2>₹ {product.price}</h2>
